@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import axios from  'axios';
 import Coin from './modules/Coin';
+import './styles/App.css';
 
 function App() {
     const [coins, setCoin] = useState([]);
@@ -16,7 +17,7 @@ function App() {
     })
 
     const handleChange = e => {
-        setSearch(e.target.value)
+        setSearch(e.target.value);
     }
 
     const filteredCoins = coins.filter(coin => 
@@ -27,8 +28,8 @@ function App() {
         <div className='coin-search'>
             <h3 className='coin-text'>Search for a currency</h3>
             <form>
-                <input className='coin-input' placeholder='search' type='text'
-                    onchange={handleChange}
+                <input className='coin-input' placeholder='search' 
+                type='text' onchange={handleChange}
                 />
             </form>
         </div>
